@@ -8,6 +8,16 @@ Esta funcionalidade permite o registro de um novo caminho de URL principal (temp
 
 `POST /core-pathname/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Cria um novo `CorePathname`. Esta rota é geralmente utilizada internamente pelo sistema ou por agentes de coleta que já realizaram a normalização da rota. Ela associa um template de rota a uma `TrafficSource`.

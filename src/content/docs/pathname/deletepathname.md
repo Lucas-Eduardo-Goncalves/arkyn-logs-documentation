@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de um caminho de URL (`Pathname`) existe
 
 `DELETE /pathname/:pathnameId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para deletar um pathname, é necessário fornecer o `pathnameId` como parâmetro na URL. A rota requer autenticação, e o usuário deve ser o proprietário da `TrafficSource` à qual o pathname pertence.

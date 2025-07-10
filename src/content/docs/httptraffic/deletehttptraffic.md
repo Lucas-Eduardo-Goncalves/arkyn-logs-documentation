@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de um registro de tráfego HTTP específ
 
 `DELETE /http-traffic/:httpTrafficId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Deleta um registro `HttpTraffic` com base no seu ID. A rota requer autenticação, e o usuário deve ter permissão sobre a `TrafficSource` à qual o registro pertence. Esta ação é geralmente reservada para fins de limpeza de dados ou administração.

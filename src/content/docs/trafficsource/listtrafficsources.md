@@ -8,6 +8,16 @@ Esta funcionalidade permite obter uma lista de todas as fontes de tráfego assoc
 
 `GET /traffic-source`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Retorna uma lista paginada das fontes de tráfego do usuário. A rota requer autenticação.

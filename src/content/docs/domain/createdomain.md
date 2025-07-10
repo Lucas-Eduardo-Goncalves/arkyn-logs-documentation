@@ -8,6 +8,16 @@ Esta funcionalidade permite o cadastro de um novo domínio associado a uma fonte
 
 `POST /domain/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para criar um novo domínio, é necessário fornecer o `trafficSourceId` na URL, e o valor do domínio e o protocolo no corpo da requisição. A rota requer autenticação, e o usuário deve ser o proprietário da `TrafficSource` especificada.

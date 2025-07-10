@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de um usuário existente do sistema.
 
 `DELETE /user/:userId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para deletar um usuário, é necessário fornecer o `userId` como parâmetro na URL. A rota requer autenticação, ou seja, o solicitante deve ter permissão para realizar esta ação. Ao deletar um usuário, todos os dados associados a ele (como fontes de tráfego) também podem ser afetados, dependendo das regras de negócio de exclusão em cascata.

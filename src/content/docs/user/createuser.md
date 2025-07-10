@@ -8,6 +8,16 @@ Esta funcionalidade permite o cadastro de um novo usuário no sistema.
 
 `POST /user`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para criar um novo usuário, é necessário fornecer nome, e-mail, senha e fuso horário (UTC). O sistema validará os dados e, se estiverem corretos, criará um novo registro de usuário.

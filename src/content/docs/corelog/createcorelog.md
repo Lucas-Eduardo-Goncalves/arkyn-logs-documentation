@@ -8,6 +8,16 @@ Esta funcionalidade é usada para criar um registro de log principal, que já es
 
 `POST /core-log/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Cria um novo registro de `CoreLog`. Esta rota é tipicamente chamada por um processo interno ou agente que já identificou a qual `CorePathname` a transação pertence. Ela armazena uma versão agregável do log.

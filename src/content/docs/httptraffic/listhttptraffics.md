@@ -8,6 +8,16 @@ Esta funcionalidade permite buscar e listar os registros de tráfego HTTP de uma
 
 `GET /http-traffic/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Retorna uma lista paginada e filtrada de registros `HttpTraffic`. A rota requer autenticação, e o usuário só pode acessar dados de fontes de tráfego que lhe pertencem.

@@ -8,6 +8,16 @@ Esta funcionalidade permite a atualização dos dados de uma fonte de tráfego e
 
 `PUT /traffic-source/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para atualizar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL e os campos a serem atualizados no corpo da requisição. A rota requer autenticação, e o usuário só pode atualizar fontes de tráfego que lhe pertencem.

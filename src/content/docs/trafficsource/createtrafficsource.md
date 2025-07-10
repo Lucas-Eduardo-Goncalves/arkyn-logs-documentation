@@ -8,6 +8,16 @@ Esta funcionalidade permite o cadastro de uma nova fonte de tráfego no sistema.
 
 `POST /traffic-source`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domínio principal associado. A rota requer autenticação, e a nova fonte de tráfego será associada ao usuário autenticado.

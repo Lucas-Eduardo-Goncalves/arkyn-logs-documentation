@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de um domínio existente do sistema.
 
 `DELETE /domain/:domainId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para deletar um domínio, é necessário fornecer o `domainId` como parâmetro na URL. A rota requer autenticação, e o usuário deve ser o proprietário da `TrafficSource` à qual o domínio pertence. A exclusão de um domínio pode afetar os registros de log associados.

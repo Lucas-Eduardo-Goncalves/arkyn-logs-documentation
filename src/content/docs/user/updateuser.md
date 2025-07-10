@@ -8,6 +8,16 @@ Esta funcionalidade permite a atualização dos dados de um usuário existente.
 
 `PUT /user/:userId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para atualizar um usuário, é necessário fornecer o `userId` como parâmetro na URL e os campos a serem atualizados no corpo da requisição. A rota requer autenticação, e o usuário autenticado geralmente só pode atualizar seus próprios dados, a menos que tenha permissões de administrador.

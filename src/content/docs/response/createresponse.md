@@ -8,6 +8,16 @@ Assim como a rota de `Request`, esta funcionalidade é primariamente para uso in
 
 `POST /response`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Cria um novo registro de `Response` no banco de dados. A rota recebe os detalhes de uma resposta HTTP, como cabeçalhos e corpo, e os armazena para serem associados a um `HttpTraffic` ou `CoreLog`.

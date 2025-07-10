@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de uma fonte de tráfego existente do si
 
 `DELETE /traffic-source/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Para deletar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL. A rota requer autenticação, e o usuário só pode deletar fontes de tráfego que lhe pertencem. A exclusão de uma fonte de tráfego pode resultar na remoção em cascata de todos os dados associados (logs, domínios, etc.).

@@ -8,6 +8,16 @@ Esta funcionalidade é utilizada internamente pelo sistema para registrar os det
 
 `POST /request`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Cria um novo registro de `Request` no banco de dados. Esta rota recebe os detalhes de uma requisição HTTP, como cabeçalhos, corpo e parâmetros de consulta, e os armazena para futura associação com um `HttpTraffic` ou `CoreLog`.

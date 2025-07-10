@@ -8,6 +8,16 @@ Esta funcionalidade permite a remoção de um caminho de URL principal (`CorePat
 
 `DELETE /core-pathname/:corePathnameId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Deleta um `CorePathname` com base no seu ID. A rota requer autenticação, e o usuário deve ser o proprietário da `TrafficSource` à qual o `CorePathname` pertence. Esta é uma operação administrativa e pode impactar a forma como novos logs e exceções são agrupados.

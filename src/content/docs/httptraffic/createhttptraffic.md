@@ -8,6 +8,16 @@ Esta funcionalidade é usada para criar um registro completo de tráfego HTTP. �
 
 `POST /http-traffic/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Cria um novo registro de `HttpTraffic`. Esta rota é tipicamente chamada por um coletor de dados ou agente de monitoramento após uma transação HTTP ter sido concluída. Ela recebe todos os metadados da transação, juntamente com os IDs da `Request` and `Response` que já devem ter sido criados separadamente.

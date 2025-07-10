@@ -8,6 +8,16 @@ Esta funcionalidade permite obter uma lista de todos os domínios associados a u
 
 `GET /domain/:trafficSourceId`
 
+## Autenticação
+
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+
+**Exemplo de cabeçalho:**
+
+```
+Authorization: Bearer <seu-token-aqui>
+```
+
 ## Descrição
 
 Retorna uma lista paginada dos domínios pertencentes à `TrafficSource` indicada na URL. A rota requer autenticação, e o usuário deve ser o proprietário da fonte de tráfego.

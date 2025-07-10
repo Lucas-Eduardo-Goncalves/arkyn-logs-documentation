@@ -1,0 +1,57 @@
+---
+title: Criar Traffic Source
+---
+
+Esta funcionalidade permite o cadastro de uma nova fonte de tráfego no sistema.
+
+## Rota
+
+`POST /traffic-source`
+
+## Descrição
+
+Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domínio principal associado. A rota requer autenticação, e a nova fonte de tráfego será associada ao usuário autenticado.
+
+## Corpo da Requisição (Request Body)
+
+| Campo           | Tipo   | Descrição                                          | Obrigatório |
+| :-------------- | :----- | :------------------------------------------------- | :---------- |
+| `name`          | string | Nome descritivo para a fonte de tráfego.           | Sim         |
+| `trafficDomain` | string | O domínio principal da aplicação a ser monitorada. | Sim         |
+
+**Exemplo:**
+
+```json
+{
+  "name": "API de Pagamentos",
+  "trafficDomain": "api.pagamentos.com"
+}
+```
+
+## Resposta de Sucesso (Success Response)
+
+**Código:** `201 Created`
+
+**Conteúdo:** O objeto da fonte de tráfego criada.
+
+**Exemplo:**
+
+```json
+{
+  "id": "c1d2e3f4-g5h6-7890-1234-567890abcdef",
+  "name": "API de Pagamentos",
+  "trafficDomain": "api.pagamentos.com",
+  "userId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+  "createdAt": "2025-07-10T11:00:00.000Z",
+  "updatedAt": "2025-07-10T11:00:00.000Z"
+}
+```
+
+## Respostas de Erro (Error Responses)
+
+- **Código:** `400 Bad Request`
+  - **Motivo:** Dados de entrada inválidos (ex: campos obrigatórios ausentes).
+- **Código:** `401 Unauthorized`
+  - **Motivo:** O solicitante não está autenticado.
+- **Código:** `500 Internal Server Error`
+  - **Motivo:** Erro inesperado no servidor.

@@ -6,7 +6,9 @@ Esta funcionalidade permite o cadastro de uma nova fonte de tráfego no sistema.
 
 ## Rota
 
-`POST /traffic-source`
+```bash
+POST /traffic-source`
+```
 
 ## Autenticação
 
@@ -14,15 +16,15 @@ Esta rota requer autenticação. É necessário incluir um token Bearer válido 
 
 **Exemplo de cabeçalho:**
 
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domínio principal associado. A rota requer autenticação, e a nova fonte de tráfego será associada ao usuário autenticado.
+Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domínio principal associado. A nova fonte de tráfego será associada ao usuário autenticado.
 
-## Corpo da Requisição (Request Body)
+## Corpo da requisição
 
 | Campo           | Tipo   | Descrição                                          | Obrigatório |
 | :-------------- | :----- | :------------------------------------------------- | :---------- |
@@ -38,7 +40,7 @@ Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domí
 }
 ```
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `201 Created`
 
@@ -57,11 +59,15 @@ Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domí
 }
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: campos obrigatórios ausentes).
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+- **Código:** `404 Not found`
+  - **Motivo:** O usuário autenticado informado não existe.
+- **Código:** `409 Conflict`
+  - **Motivo:** O domínio informado já está cadastrado em outra fonte de tráfego do mesmo.
 - **Código:** `500 Internal Server Error`
   - **Motivo:** Erro inesperado no servidor.

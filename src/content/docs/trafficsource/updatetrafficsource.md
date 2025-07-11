@@ -6,7 +6,9 @@ Esta funcionalidade permite a atualização dos dados de uma fonte de tráfego e
 
 ## Rota
 
-`PUT /traffic-source/:trafficSourceId`
+```bash
+PUT /traffic-source/:trafficSourceId
+```
 
 ## Autenticação
 
@@ -14,28 +16,28 @@ Esta rota requer autenticação. É necessário incluir um token Bearer válido 
 
 **Exemplo de cabeçalho:**
 
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Para atualizar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL e os campos a serem atualizados no corpo da requisição. A rota requer autenticação, e o usuário só pode atualizar fontes de tráfego que lhe pertencem.
+Para atualizar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL e os campos a serem atualizados no corpo da requisição. O usuário só pode atualizar fontes de tráfego que lhe pertencem.
 
-## Parâmetros da Rota (Route Parameters)
+## Parâmetros da rota
 
 | Parâmetro         | Tipo   | Descrição                                | Obrigatório |
 | :---------------- | :----- | :--------------------------------------- | :---------- |
 | `trafficSourceId` | string | ID da fonte de tráfego a ser atualizada. | Sim         |
 
-## Corpo da Requisição (Request Body)
+## Corpo da requisição
 
 Os campos são opcionais. Apenas os campos fornecidos serão atualizados.
 
-| Campo           | Tipo   | Descrição                            |
-| :-------------- | :----- | :----------------------------------- |
-| `name`          | string | Novo nome para a fonte de tráfego.   |
-| `trafficDomain` | string | Novo domínio principal da aplicação. |
+| Campo           | Tipo   | Descrição                            | Obrigatório |
+| :-------------- | :----- | :----------------------------------- | :---------- |
+| `name`          | string | Novo nome para a fonte de tráfego.   | Não         |
+| `trafficDomain` | string | Novo domínio principal da aplicação. | Não         |
 
 **Exemplo:**
 

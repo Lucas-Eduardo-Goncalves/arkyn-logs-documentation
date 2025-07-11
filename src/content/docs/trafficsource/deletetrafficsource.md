@@ -1,12 +1,14 @@
 ---
-title: Deletar Traffic Source
+title: Deletar TrafficSource
 ---
 
 Esta funcionalidade permite a remoção de uma fonte de tráfego existente do sistema.
 
 ## Rota
 
-`DELETE /traffic-source/:trafficSourceId`
+```bash
+DELETE /traffic-source/:trafficSourceId
+```
 
 ## Autenticação
 
@@ -14,27 +16,27 @@ Esta rota requer autenticação. É necessário incluir um token Bearer válido 
 
 **Exemplo de cabeçalho:**
 
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Para deletar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL. A rota requer autenticação, e o usuário só pode deletar fontes de tráfego que lhe pertencem. A exclusão de uma fonte de tráfego pode resultar na remoção em cascata de todos os dados associados (logs, domínios, etc.).
+Para deletar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` como parâmetro na URL. O usuário só pode deletar fontes de tráfego que lhe pertencem. A exclusão de uma fonte de tráfego pode resultar na remoção em cascata de todos os dados associados (logs, domínios, etc.).
 
-## Parâmetros da Rota (Route Parameters)
+## Parâmetros da Rota
 
 | Parâmetro         | Tipo   | Descrição                              | Obrigatório |
 | :---------------- | :----- | :------------------------------------- | :---------- |
 | `trafficSourceId` | string | ID da fonte de tráfego a ser deletada. | Sim         |
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `204 No Content`
 
 **Conteúdo:** Nenhum conteúdo é retornado no corpo da resposta.
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** O `trafficSourceId` fornecido é inválido.

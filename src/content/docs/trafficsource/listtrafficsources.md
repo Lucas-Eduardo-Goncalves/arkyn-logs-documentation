@@ -6,7 +6,9 @@ Esta funcionalidade permite obter uma lista de todas as fontes de tráfego assoc
 
 ## Rota
 
-`GET /traffic-source`
+```bash
+GET /traffic-source
+```
 
 ## Autenticação
 
@@ -14,22 +16,22 @@ Esta rota requer autenticação. É necessário incluir um token Bearer válido 
 
 **Exemplo de cabeçalho:**
 
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Retorna uma lista paginada das fontes de tráfego do usuário. A rota requer autenticação.
+Retorna uma lista paginada das fontes de tráfego do usuário.
 
-## Parâmetros de Consulta (Query Parameters)
+## Parâmetros de consulta
 
 | Parâmetro | Tipo   | Descrição                                   | Padrão |
 | :-------- | :----- | :------------------------------------------ | :----- |
 | `page`    | number | Número da página a ser retornada.           | 1      |
 | `limit`   | number | Quantidade de fontes de tráfego por página. | 10     |
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `200 OK`
 

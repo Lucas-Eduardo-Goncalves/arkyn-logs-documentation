@@ -26,23 +26,35 @@ export default defineConfig({
       sidebar: [
         { label: "Introdução", slug: "introduction" },
         {
-          label: "Domain",
+          label: "TrafficSource",
           collapsed: true,
           items: [
-            { label: "Introdução", slug: "domain/introduction" },
-            { label: "Criar Domain", slug: "domain/createdomain" },
-            { label: "Deletar Domain", slug: "domain/deletedomain" },
-            { label: "Listar Domains", slug: "domain/listdomains" },
+            { label: "Introdução", slug: "trafficsource/introduction" },
+            {
+              label: "Criar TrafficSource",
+              slug: "trafficsource/createtrafficsource",
+            },
+            {
+              label: "Atualizar TrafficSource",
+              slug: "trafficsource/updatetrafficsource",
+            },
+            {
+              label: "Deletar TrafficSource",
+              slug: "trafficsource/deletetrafficsource",
+            },
+            {
+              label: "Listar TrafficSources",
+              slug: "trafficsource/listtrafficsources",
+            },
           ],
         },
         {
-          label: "Pathname",
+          label: "CoreLog",
           collapsed: true,
           items: [
-            { label: "Introdução", slug: "pathname/introduction" },
-            { label: "Criar Pathname", slug: "pathname/createpathname" },
-            { label: "Deletar Pathname", slug: "pathname/deletepathname" },
-            { label: "Listar Pathnames", slug: "pathname/listpathnames" },
+            { label: "Introdução", slug: "corelog/introduction" },
+            { label: "Criar CoreLog", slug: "corelog/createcorelog" },
+            { label: "Listar CoreLogs", slug: "corelog/listcorelogs" },
           ],
         },
         {
@@ -65,15 +77,6 @@ export default defineConfig({
           ],
         },
         {
-          label: "CoreLog",
-          collapsed: true,
-          items: [
-            { label: "Introdução", slug: "corelog/introduction" },
-            { label: "Criar CoreLog", slug: "corelog/createcorelog" },
-            { label: "Listar CoreLogs", slug: "corelog/listcorelogs" },
-          ],
-        },
-        {
           label: "HttpTraffic",
           collapsed: true,
           items: [
@@ -93,18 +96,23 @@ export default defineConfig({
           ],
         },
         {
-          label: "HttpTrafficRecord",
+          label: "Domain",
           collapsed: true,
           items: [
-            { label: "Introdução", slug: "httptrafficrecord/introduction" },
-            {
-              label: "Compor HttpTrafficRecord",
-              slug: "httptrafficrecord/composehttptrafficrecord",
-            },
-            {
-              label: "Listar HttpTrafficRecords",
-              slug: "httptrafficrecord/listhttptrafficrecords",
-            },
+            { label: "Introdução", slug: "domain/introduction" },
+            { label: "Criar Domain", slug: "domain/createdomain" },
+            { label: "Deletar Domain", slug: "domain/deletedomain" },
+            { label: "Listar Domains", slug: "domain/listdomains" },
+          ],
+        },
+        {
+          label: "Pathname",
+          collapsed: true,
+          items: [
+            { label: "Introdução", slug: "pathname/introduction" },
+            { label: "Criar Pathname", slug: "pathname/createpathname" },
+            { label: "Deletar Pathname", slug: "pathname/deletepathname" },
+            { label: "Listar Pathnames", slug: "pathname/listpathnames" },
           ],
         },
         {
@@ -124,25 +132,17 @@ export default defineConfig({
           ],
         },
         {
-          label: "TrafficSource",
+          label: "HttpTrafficRecord",
           collapsed: true,
           items: [
-            { label: "Introdução", slug: "trafficsource/introduction" },
+            { label: "Introdução", slug: "httptrafficrecord/introduction" },
             {
-              label: "Criar TrafficSource",
-              slug: "trafficsource/createtrafficsource",
+              label: "Compor HttpTrafficRecord",
+              slug: "httptrafficrecord/composehttptrafficrecord",
             },
             {
-              label: "Atualizar TrafficSource",
-              slug: "trafficsource/updatetrafficsource",
-            },
-            {
-              label: "Deletar TrafficSource",
-              slug: "trafficsource/deletetrafficsource",
-            },
-            {
-              label: "Listar TrafficSources",
-              slug: "trafficsource/listtrafficsources",
+              label: "Listar HttpTrafficRecords",
+              slug: "httptrafficrecord/listhttptrafficrecords",
             },
           ],
         },

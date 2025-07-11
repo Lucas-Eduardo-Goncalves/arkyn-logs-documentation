@@ -40,8 +40,10 @@ Para deletar uma fonte de tráfego, é necessário fornecer o `trafficSourceId` 
 
 - **Código:** `400 Bad Request`
   - **Motivo:** O `trafficSourceId` fornecido é inválido.
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido ("Invalid token").
 - **Código:** `403 Forbidden`
   - **Motivo:** O solicitante não tem permissão para deletar esta fonte de tráfego.
 - **Código:** `404 Not Found`

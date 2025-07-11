@@ -70,8 +70,10 @@ Os campos são opcionais. Apenas os campos fornecidos serão atualizados.
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos.
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido ("Invalid token").
 - **Código:** `403 Forbidden`
   - **Motivo:** O solicitante não tem permissão para atualizar esta fonte de tráfego.
 - **Código:** `404 Not Found`

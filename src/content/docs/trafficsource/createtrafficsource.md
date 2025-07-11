@@ -63,8 +63,10 @@ Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domí
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: campos obrigatórios ausentes).
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido ("Invalid token").
 - **Código:** `404 Not found`
   - **Motivo:** O usuário autenticado informado não existe.
 - **Código:** `409 Conflict`

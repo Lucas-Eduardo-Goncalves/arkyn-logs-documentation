@@ -69,7 +69,10 @@ Retorna uma lista paginada das fontes de tráfego do usuário.
 
 ## Respostas de Erro (Error Responses)
 
+- **Código:** `400 Bad Request`
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido ("Invalid token").
 - **Código:** `500 Internal Server Error`
   - **Motivo:** Erro inesperado no servidor.

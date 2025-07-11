@@ -45,16 +45,11 @@
   --sl-color-yellow: hsl(var(--sl-hue-yellow), 90%, 50%);
   --sl-color-yellow-high: hsl(var(--sl-hue-yellow), 100%, 70%);
 
-  /* --sl-hue-accent: 195;
+  --sl-hue-accent: 195;
 
   --sl-color-accent-low: hsl(var(--sl-hue-accent), 49%, 20%);
   --sl-color-accent: hsl(var(--sl-hue-accent), 49%, 31%);
-  --sl-color-accent-high: hsl(var(--sl-hue-accent), 52%, 60%); */
-
-  --sl-hue-orange: 42;
-  --sl-color-accent-low: hsl(var(--sl-hue-accent), 70%, 20%);
-  --sl-color-accent: hsl(var(--sl-hue-accent), 90%, 60%);
-  --sl-color-accent-high: hsl(var(--sl-hue-accent), 95%, 85%);
+  --sl-color-accent-high: hsl(var(--sl-hue-accent), 52%, 60%);
 
   --sl-color-text-accent: var(--sl-color-accent-high);
   --sl-color-bg-accent: var(--sl-color-accent-low);

@@ -17,12 +17,12 @@ A entidade `TrafficSource` (Fonte de Tráfego) representa a origem dos logs e ev
 
 A `TrafficSource` é uma entidade central que se conecta a várias outras partes do sistema:
 
-- **User**: Cada fonte de tráfego pertence a um único usuário.
-- **Domain**: Uma `TrafficSource` pode ter vários `Domain` (domínios) associados.
-- **Pathname**: Agrupa todos os `Pathname` (caminhos de URL) registrados sob esta fonte.
-- **HttpTraffic**: Armazena os registros de tráfego HTTP (`HttpTraffic`) gerados.
-- **CorePathname**: Mantém os caminhos de URL principais (`CorePathname`) para agregação de logs.
-- **CoreLog**: Consolida os logs principais (`CoreLog`).
+- [**User**](/user/introduction): Cada fonte de tráfego pertence a um único usuário.
+- [**Domain**](/domain/introduction): Uma `TrafficSource` pode ter vários `Domain` (domínios) associados.
+- [**Pathname**](/pathname/introduction): Agrupa todos os `Pathname` (caminhos de URL) registrados sob esta fonte.
+- [**HttpTraffic**](/httptraffic/introduction): Armazena os registros de tráfego HTTP (`HttpTraffic`) gerados.
+- [**CorePathname**](/corepathname/introduction): Mantém os caminhos de URL principais (`CorePathname`) para agregação de logs.
+- [**CoreLog**](/corelog/introduction): Consolida os logs principais (`CoreLog`).
 
 ## Resumo
 

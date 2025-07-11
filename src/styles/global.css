@@ -1,0 +1,61 @@
+:root {
+  /* Cores baseadas no ícone */
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-gray-1: hsl(210, 30%, 95%);
+  --sl-color-gray-2: hsl(210, 22%, 75%);
+  --sl-color-gray-3: hsl(210, 18%, 55%);
+  --sl-color-gray-4: hsl(210, 18%, 35%);
+  --sl-color-gray-5: hsl(210, 20%, 20%);
+  --sl-color-gray-6: hsl(210, 28%, 12%); /* Ligeiramente mais escuro */
+  --sl-color-black: hsl(220, 30%, 6%); /* Fundo quase preto com azul */
+
+  --sl-hue-orange: 42;
+  --sl-color-orange-low: hsl(var(--sl-hue-orange), 70%, 20%);
+  --sl-color-orange: hsl(var(--sl-hue-orange), 90%, 60%);
+  --sl-color-orange-high: hsl(var(--sl-hue-orange), 95%, 85%);
+
+  --sl-hue-blue: 210;
+  --sl-color-blue-low: hsl(var(--sl-hue-blue), 70%, 15%);
+  --sl-color-blue: hsl(var(--sl-hue-blue), 100%, 65%);
+  --sl-color-blue-high: hsl(var(--sl-hue-blue), 90%, 85%);
+
+  --sl-color-accent-low: var(--sl-color-blue-low);
+  --sl-color-accent: var(--sl-color-blue);
+  --sl-color-accent-high: var(--sl-color-blue-high);
+
+  /* Texto e fundo */
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-orange-high);
+  --sl-color-text-invert: var(--sl-color-black);
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-gray-6);
+  --sl-color-bg-sidebar: var(--sl-color-gray-6);
+  --sl-color-bg-inline-code: var(--sl-color-gray-5);
+  --sl-color-bg-accent: var(--sl-color-accent-high);
+
+  --sl-color-hairline-light: var(--sl-color-gray-5);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-black);
+
+  --sl-color-backdrop-overlay: hsla(220, 25%, 6%, 0.66);
+
+  --sl-hue-yellow: 42;
+
+  --sl-color-yellow-low: hsl(var(--sl-hue-yellow), 75%, 25%);
+  --sl-color-yellow: hsl(var(--sl-hue-yellow), 90%, 50%);
+  --sl-color-yellow-high: hsl(var(--sl-hue-yellow), 100%, 70%);
+
+  /* --sl-hue-accent: 195;
+
+  --sl-color-accent-low: hsl(var(--sl-hue-accent), 49%, 20%);
+  --sl-color-accent: hsl(var(--sl-hue-accent), 49%, 31%);
+  --sl-color-accent-high: hsl(var(--sl-hue-accent), 52%, 60%); */
+
+  --sl-hue-orange: 42;
+  --sl-color-accent-low: hsl(var(--sl-hue-accent), 70%, 20%);
+  --sl-color-accent: hsl(var(--sl-hue-accent), 90%, 60%);
+  --sl-color-accent-high: hsl(var(--sl-hue-accent), 95%, 85%);
+
+  --sl-color-text-accent: var(--sl-color-accent-high);
+  --sl-color-bg-accent: var(--sl-color-accent-low);
+}

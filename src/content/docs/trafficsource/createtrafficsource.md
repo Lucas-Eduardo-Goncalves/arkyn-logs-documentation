@@ -14,8 +14,6 @@ POST /traffic-source`
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
 ```bash
 Authorization: Bearer <seu-token-aqui>
 ```
@@ -66,7 +64,7 @@ Para criar uma nova fonte de tráfego, é necessário fornecer um nome e o domí
   - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
-  - **Motivo:** O token fornecido é inválido ("Invalid token").
+  - **Motivo:** O token fornecido é inválido.
 - **Código:** `404 Not found`
   - **Motivo:** O usuário autenticado informado não existe.
 - **Código:** `409 Conflict`

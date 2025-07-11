@@ -6,29 +6,31 @@ Esta funcionalidade permite o cadastro de um novo domínio associado a uma fonte
 
 ## Rota
 
-`POST /domain/:trafficSourceId`
+```bash
+POST /domain/:trafficSourceId
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Para criar um novo domínio, é necessário fornecer o `trafficSourceId` na URL, e o valor do domínio e o protocolo no corpo da requisição. A rota requer autenticação, e o usuário deve ser o proprietário da `TrafficSource` especificada.
+Para criar um novo domínio, é necessário fornecer o `trafficSourceId` na URL, e o valor do domínio e o protocolo no corpo da requisição. O usuário deve ser o proprietário da `TrafficSource` especificada.
 
-## Parâmetros da Rota (Route Parameters)
+Caso já haja um domínio igual cadastrado, não será criado um novo domínio e será retornado o domínio já existente.
+
+## Parâmetros da rota
 
 | Parâmetro         | Tipo   | Descrição                                         | Obrigatório |
 | :---------------- | :----- | :------------------------------------------------ | :---------- |
 | `trafficSourceId` | string | ID da fonte de tráfego à qual o domínio pertence. | Sim         |
 
-## Corpo da Requisição (Request Body)
+## Corpo da requisição
 
 | Campo      | Tipo   | Descrição                                   | Obrigatório |
 | :--------- | :----- | :------------------------------------------ | :---------- |
@@ -44,7 +46,7 @@ Para criar um novo domínio, é necessário fornecer o `trafficSourceId` na URL,
 }
 ```
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `201 Created`
 
@@ -62,12 +64,14 @@ Para criar um novo domínio, é necessário fornecer o `trafficSourceId` na URL,
 }
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: campos obrigatórios ausentes, protocolo inválido).
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido.
 - **Código:** `403 Forbidden`
   - **Motivo:** O solicitante não tem permissão para adicionar um domínio a esta fonte de tráfego.
 - **Código:** `404 Not Found`

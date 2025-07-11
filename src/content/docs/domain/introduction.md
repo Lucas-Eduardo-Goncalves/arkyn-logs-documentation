@@ -14,16 +14,8 @@ A entidade `Domain` representa os domínios e subdomínios específicos que est�
 
 ## Relacionamentos
 
-- **TrafficSource**: Cada `Domain` pertence a uma única `TrafficSource`.
-- **Pathname**: Um `Domain` pode ter vários `Pathname` (caminhos de URL) associados a ele.
-- **HttpTraffic**: Armazena os registros de tráfego HTTP (`HttpTraffic`) que ocorreram nesse domínio específico.
-
-## Importância no Sistema
-
-A entidade `Domain` é importante para:
-
-1.  **Granularidade**: Permitir que o usuário separe os logs de diferentes subdomínios ou domínios que fazem parte da mesma `TrafficSource`. Por exemplo, separar os logs do "blog.meusite.com" dos logs de "app.meusite.com".
-2.  **Contexto Técnico**: Registrar o protocolo (`HTTP`/`HTTPS`) adiciona um contexto técnico importante para a análise do tráfego.
-3.  **Filtragem e Análise**: Facilita a criação de filtros e visualizações que focam em um domínio específico, ajudando a identificar problemas ou analisar o comportamento de uma parte da aplicação.
+- [**TrafficSource**](/trafficsource/introduction): Cada `Domain` pertence a uma única `TrafficSource`.
+- [**Pathname**](/pathname/introduction): Um `Domain` pode ter vários `Pathname` (caminhos de URL) associados a ele.
+- [**HttpTraffic**](/httptraffic/introduction): Armazena os registros de tráfego HTTP (`HttpTraffic`) que ocorreram nesse domínio específico.
 
 Em resumo, `Domain` ajuda a subdividir uma `TrafficSource` em unidades menores e mais gerenciáveis, refletindo a arquitetura real da aplicação que está sendo monitorada.

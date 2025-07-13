@@ -10,7 +10,7 @@ This feature allows you to get a list of all core URL paths (route templates) as
 
 ## Authentication
 
-This route requires authentication. A valid Bearer token must be included in the `Authorization` header of the request. The token must be obtained through the [user authentication route](/user/authuser/).
+This route requires authentication. A valid Bearer token must be included in the `Authorization` header of the request. The token must be obtained through the [user authentication route](/en/user/authuser/).
 
 **Example header:**
 

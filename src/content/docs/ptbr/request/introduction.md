@@ -14,7 +14,7 @@ A entidade `Request` armazena os detalhes de uma requisição HTTP individual qu
 
 ## Relacionamentos
 
-- [**HttpTraffic**](/httptraffic/introduction): Uma `Request` pode estar associada a um registro de `HttpTraffic`, representando a parte de "entrada" de um log de tráfego HTTP completo.
-- [**CoreLog**](/corelog/introduction): De forma similar, uma `Request` pode estar associada a um `CoreLog`, detalhando a requisição que gerou aquele log principal.
+- [**HttpTraffic**](/ptbr/httptraffic/introduction): Uma `Request` pode estar associada a um registro de `HttpTraffic`, representando a parte de "entrada" de um log de tráfego HTTP completo.
+- [**CoreLog**](/ptbr/corelog/introduction): De forma similar, uma `Request` pode estar associada a um `CoreLog`, detalhando a requisição que gerou aquele log principal.
 
 Em resumo, a entidade `Request` fornece uma "fotografia" completa dos dados que entram no sistema a cada requisição HTTP, sendo um recurso indispensável para o monitoramento e a manutenção de qualquer aplicação web.

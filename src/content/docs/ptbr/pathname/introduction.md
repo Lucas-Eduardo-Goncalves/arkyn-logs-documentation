@@ -14,8 +14,8 @@ A entidade `Pathname` representa os caminhos específicos (rotas ou páginas) de
 
 ## Relacionamentos
 
-- [**TrafficSource**](/trafficsource/introduction): Cada `Pathname` está associado a uma `TrafficSource` para facilitar a agregação de dados no nível da fonte de tráfego.
-- [**Domain**](/domain/introduction): Cada `Pathname` pertence a um `Domain` específico.
-- [**HttpTraffic**](/httptraffic/introduction): Um `Pathname` pode ter múltiplos registros de `HttpTraffic` associados, representando todas as requisições feitas para aquele caminho específico.
+- [**TrafficSource**](/ptbr/trafficsource/introduction): Cada `Pathname` está associado a uma `TrafficSource` para facilitar a agregação de dados no nível da fonte de tráfego.
+- [**Domain**](/ptbr/domain/introduction): Cada `Pathname` pertence a um `Domain` específico.
+- [**HttpTraffic**](/ptbr/httptraffic/introduction): Um `Pathname` pode ter múltiplos registros de `HttpTraffic` associados, representando todas as requisições feitas para aquele caminho específico.
 
 Em resumo, `Pathname` fornece a granularidade final para a análise de tráfego web, permitindo que os usuários entendam exatamente como cada parte de sua aplicação está se comportando.

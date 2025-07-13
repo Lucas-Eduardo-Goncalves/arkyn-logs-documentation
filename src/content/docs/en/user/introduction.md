@@ -16,6 +16,6 @@ The `User` entity is one of the core pillars of the Arkyn Logs system. It repres
 
 ## Relationships
 
-- [**TrafficSource**](/trafficsource/introduction): A user can have multiple `TrafficSource` (traffic sources), which allows for grouping and filtering logs originating from different applications or services monitored by that user.
+- [**TrafficSource**](/en/trafficsource/introduction): A user can have multiple `TrafficSource` (traffic sources), which allows for grouping and filtering logs originating from different applications or services monitored by that user.
 
 In short, the `User` entity not only manages access but also serves as an aggregation point for all collected log data, becoming the foundation for the organization and security of the Arkyn Logs platform.

@@ -16,6 +16,6 @@ A entidade `User` (Usuário) é um dos pilares centrais do sistema Arkyn Logs. E
 
 ## Relacionamentos
 
-- [**TrafficSource**](/trafficsource/introduction): Um usuário pode possuir várias `TrafficSource` (fontes de tráfego), o que permite agrupar e filtrar logs originados de diferentes aplicações ou serviços monitorados por aquele usuário.
+- [**TrafficSource**](/ptbr/trafficsource/introduction): Um usuário pode possuir várias `TrafficSource` (fontes de tráfego), o que permite agrupar e filtrar logs originados de diferentes aplicações ou serviços monitorados por aquele usuário.
 
 Em resumo, a entidade `User` não apenas gerencia o acesso, mas também serve como um ponto de agregação para todos os dados de log coletados, tornando-se a base para a organização e a segurança da plataforma Arkyn Logs.

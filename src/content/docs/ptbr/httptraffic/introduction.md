@@ -21,8 +21,8 @@ A entidade `HttpTraffic` é um dos registros de log mais completos do sistema. E
 
 ## Relacionamentos
 
-- [**TrafficSource**](/trafficsource/introduction), [**Domain**](/domain/introduction), [**Pathname**](/pathname/introduction): Contextualizam onde a transação ocorreu.
-- [**Request**](/request/introduction): Contém todos os detalhes da requisição de entrada.
-- [**Response**](/response/introduction): Contém todos os detalhes da resposta de saída.
+- [**TrafficSource**](/ptbr/trafficsource/introduction), [**Domain**](/ptbr/domain/introduction), [**Pathname**](/ptbr/pathname/introduction): Contextualizam onde a transação ocorreu.
+- [**Request**](/ptbr/request/introduction): Contém todos os detalhes da requisição de entrada.
+- [**Response**](/ptbr/response/introduction): Contém todos os detalhes da resposta de saída.
 
 Em resumo, `HttpTraffic` transforma dados brutos de requisição e resposta em um registro de log estruturado e enriquecido, que é a base para a maioria das análises e visualizações na plataforma Arkyn Logs.

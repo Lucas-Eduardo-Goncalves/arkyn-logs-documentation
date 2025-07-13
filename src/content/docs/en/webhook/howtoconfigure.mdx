@@ -1,0 +1,110 @@
+---
+title: How to Set Up the Discord Webhook
+---
+
+This guide explains how to set up the API webhook to send notifications to Discord.
+
+## Prerequisites
+
+- Have administrative access to the Discord server
+
+## Step 1: Install the Arkyn Bot on the server
+
+1. Access the bot's [Authorization URL](https://discord.com/api/oauth2/authorize?client_id=1393844236054433832&scope=bot&permissions=68608)
+
+2. Select the Discord server where you want to install the bot.
+
+3. Make sure the necessary permissions are checked:
+
+- **Read Messages/View Channels**: To access channels.
+- **Send Messages**: To send notifications.
+- **Read Message History**: To check previous messages.
+
+4. Click **"Authorize"** to install the bot.
+
+## Step 2: Get the Channel ID
+
+1. In Discord, go to **User Settings** (gear icon).
+
+2. In **App Settings**, enable **Developer Mode**.
+
+3. Navigate to the channel where you want to receive notifications.
+
+4. Right-click the channel name.
+
+5. Select **"Copy ID"** from the context menu.
+
+6. Save this ID—you'll need it to set up the webhook.
+
+## Step 3: Configure Channel Permissions
+
+Make sure the bot has the necessary permissions in the channel. Selected:
+
+1. Right-click the channel
+
+2. Select "Edit Channel"
+
+3. Go to the "Permissions" tab
+
+4. Search for the bot in the member/role list
+
+5. Ensure the following permissions are enabled:
+
+- ✅ **View Channel**
+- ✅ **Send Messages**
+- ✅ **Read Message History**
+
+import { Aside } from "@astrojs/starlight/components";
+
+<Aside type="note">
+  **Difficulties with permissions?** If you are unable to configure the bot's
+  permissions within the server, you can install the bot as an administrator
+  using this [Authorization URL with administrative
+  permissions](https://discord.com/api/oauth2/authorize?client_id=1393844236054433832&scope=bot&permissions=8).
+</Aside>
+
+## Step 4: Update the Webhook in the API
+
+1. Access the [webhook update endpoint](/en/webhook/updatewebhook)
+
+2. Use the channel ID copied in Step 2
+
+3. Update the webhook configuration with the new channel ID
+
+## Verification
+
+After configuring the webhook:
+
+1. Send a test message through the API
+2. Verify that the notification appears in the configured Discord channel
+3. Confirm that the message format is correct
+
+## Troubleshooting
+
+### Bot not appearing on the server
+
+- Check that you have administrative permissions on the server
+- Try reinstalling the bot using the authorization URL
+
+### Messages not sending
+
+- Confirm that the channel ID is correct
+- Check the bot's permissions in the channel
+- Make sure the webhook is enabled in the API
+
+### Bot without permissions
+
+- Go to channel settings
+- Add the necessary permissions manually
+- Or adjust the bot's role permissions on the server
+
+## Important Notes
+
+- The channel ID is unique and specific to each channel
+- Permissions can be inherited from the server settings
+- Keep the channel ID secure, as it grants access to the specific channel
+- The bot will only work on servers where it has been authorized
+
+---
+
+**Tip**: For quick testing, you can send a manual message in the channel and check if the bot can "see" the message using the configured permissions.

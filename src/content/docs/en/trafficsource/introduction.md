@@ -17,12 +17,12 @@ The `TrafficSource` entity represents the origin of the logs and events monitore
 
 A `TrafficSource` is a central entity that connects to several other parts of the system:
 
-- [**User**](/user/introduction): Each traffic source belongs to a single user.
-- [**Domain**](/domain/introduction): A `TrafficSource` can have multiple `Domains` (domains) associated with it.
-- [**Pathname**](/pathname/introduction): Groups all `Pathnames` (URL paths) registered under this source.
-- [**HttpTraffic**](/httptraffic/introduction): Stores the HTTP traffic logs (`HttpTraffic`) generated.
-- [**CorePathname**](/corepathname/introduction): Maintains the core URL paths (`CorePathname`) for log aggregation.
-- [**CoreLog**](/corelog/introduction): Consolidates the main logs (`CoreLog`).
+- [**User**](/en/user/introduction): Each traffic source belongs to a single user.
+- [**Domain**](/en/domain/introduction): A `TrafficSource` can have multiple `Domains` (domains) associated with it.
+- [**Pathname**](/en/pathname/introduction): Groups all `Pathnames` (URL paths) registered under this source.
+- [**HttpTraffic**](/en/httptraffic/introduction): Stores the HTTP traffic logs (`HttpTraffic`) generated.
+- [**CorePathname**](/en/corepathname/introduction): Maintains the core URL paths (`CorePathname`) for log aggregation.
+- [**CoreLog**](/en/corelog/introduction): Consolidates the main logs (`CoreLog`).
 
 ## Summary
 

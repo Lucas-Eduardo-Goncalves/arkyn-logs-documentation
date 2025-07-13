@@ -20,8 +20,8 @@ The `HttpTraffic` entity is one of the most comprehensive log records in the sys
 
 ## Relationships
 
-- [**TrafficSource**](/trafficsource/introduction), [**Domain**](/domain/introduction), [**Pathname**](/pathname/introduction): Provide context for where the transaction occurred.
-- [**Request**](/request/introduction): Contains all the details of the incoming request.
-- [**Response**](/response/introduction): Contains all the details of the outgoing response.
+- [**TrafficSource**](/en/trafficsource/introduction), [**Domain**](/en/domain/introduction), [**Pathname**](/en/pathname/introduction): Provide context for where the transaction occurred.
+- [**Request**](/en/request/introduction): Contains all the details of the incoming request.
+- [**Response**](/en/response/introduction): Contains all the details of the outgoing response.
 
 In short, `HttpTraffic` transforms raw request and response data into a structured and enriched log record, which is the basis for most analysis and visualization in the Arkyn Logs platform.

@@ -10,7 +10,7 @@ Esta funcionalidade permite obter uma lista de todos os caminhos de URL principa
 
 ## Autenticação
 
-Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
+Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/ptbr/user/authuser/).
 
 **Exemplo de cabeçalho:**
 

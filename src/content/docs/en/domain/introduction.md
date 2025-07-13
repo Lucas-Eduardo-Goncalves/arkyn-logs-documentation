@@ -14,8 +14,8 @@ The `Domain` entity represents the specific domains and subdomains being monitor
 
 ## Relationships
 
-- [**TrafficSource**](/trafficsource/introduction): Each `Domain` belongs to a single `TrafficSource`.
-- [**Pathname**](/pathname/introduction): A `Domain` can have multiple `Pathnames` (URL paths) associated with it.
-- [**HttpTraffic**](/httptraffic/introduction): Stores HTTP traffic records (`HttpTraffic`) that occurred within that specific domain.
+- [**TrafficSource**](/en/trafficsource/introduction): Each `Domain` belongs to a single `TrafficSource`.
+- [**Pathname**](/en/pathname/introduction): A `Domain` can have multiple `Pathnames` (URL paths) associated with it.
+- [**HttpTraffic**](/en/httptraffic/introduction): Stores HTTP traffic records (`HttpTraffic`) that occurred within that specific domain.
 
 In short, `Domain` helps subdivide a `TrafficSource` into smaller, more manageable units, reflecting the actual architecture of the application being monitored.

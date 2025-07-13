@@ -12,7 +12,7 @@ PUT /user/:userId
 
 ## Authentication
 
-This route requires authentication. You must include a valid Bearer token in the `Authorization` header of the request. The token must be obtained through the [user authentication route](/user/authuser/).
+This route requires authentication. You must include a valid Bearer token in the `Authorization` header of the request. The token must be obtained through the [user authentication route](/en/user/authuser/).
 
 ```bash
 Authorization: Bearer <your-token-here>

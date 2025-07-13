@@ -289,6 +289,36 @@ export default defineConfig({
           ],
         },
         {
+          label: "Webhook",
+          collapsed: true,
+          translations: { ptbr: "Webhook", en: "Webhook" },
+          items: [
+            {
+              label: "Introdução",
+              slug: "webhook/introduction",
+              translations: { ptbr: "Introdução", en: "Introduction" },
+            },
+            {
+              label: "Hot to configure Webhook",
+              slug: "webhook/howtoconfigure",
+              translations: {
+                ptbr: "Como configurar o webhook",
+                en: "Hot to configure Webhook",
+              },
+            },
+            {
+              label: "Listar Webhook",
+              slug: "webhook/listwebhook",
+              translations: { ptbr: "Listar Webhook", en: "List Webhook" },
+            },
+            {
+              label: "Atualizar Webhook",
+              slug: "webhook/updatewebhook",
+              translations: { ptbr: "Atualizar Webhook", en: "Update Webhook" },
+            },
+          ],
+        },
+        {
           label: "User",
           collapsed: true,
           translations: { ptbr: "User", en: "User" },

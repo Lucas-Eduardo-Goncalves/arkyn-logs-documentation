@@ -14,8 +14,8 @@ A entidade `Domain` representa os domínios e subdomínios específicos que est�
 
 ## Relacionamentos
 
-- [**TrafficSource**](/trafficsource/introduction): Cada `Domain` pertence a uma única `TrafficSource`.
-- [**Pathname**](/pathname/introduction): Um `Domain` pode ter vários `Pathname` (caminhos de URL) associados a ele.
-- [**HttpTraffic**](/httptraffic/introduction): Armazena os registros de tráfego HTTP (`HttpTraffic`) que ocorreram nesse domínio específico.
+- [**TrafficSource**](/ptbr/trafficsource/introduction): Cada `Domain` pertence a uma única `TrafficSource`.
+- [**Pathname**](/ptbr/pathname/introduction): Um `Domain` pode ter vários `Pathname` (caminhos de URL) associados a ele.
+- [**HttpTraffic**](/ptbr/httptraffic/introduction): Armazena os registros de tráfego HTTP (`HttpTraffic`) que ocorreram nesse domínio específico.
 
 Em resumo, `Domain` ajuda a subdividir uma `TrafficSource` em unidades menores e mais gerenciáveis, refletindo a arquitetura real da aplicação que está sendo monitorada.

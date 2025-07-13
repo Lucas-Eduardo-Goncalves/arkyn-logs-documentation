@@ -14,8 +14,8 @@ The `Pathname` entity represents the specific paths (routes or pages) within a `
 
 ## Relationships
 
-- [**TrafficSource**](/trafficsource/introduction): Each `Pathname` is associated with a `TrafficSource` to facilitate data aggregation at the traffic source level.
-- [**Domain**](/domain/introduction): Each `Pathname` belongs to a specific `Domain`.
-- [**HttpTraffic**](/httptraffic/introduction): A `Pathname` can have multiple `HttpTraffic` records associated with it, representing all requests made for that specific path.
+- [**TrafficSource**](/en/trafficsource/introduction): Each `Pathname` is associated with a `TrafficSource` to facilitate data aggregation at the traffic source level.
+- [**Domain**](/en/domain/introduction): Each `Pathname` belongs to a specific `Domain`.
+- [**HttpTraffic**](/en/httptraffic/introduction): A `Pathname` can have multiple `HttpTraffic` records associated with it, representing all requests made for that specific path.
 
 In short, `Pathname` provides the ultimate granularity for web traffic analysis, allowing users to understand exactly how each part of their application is behaving.

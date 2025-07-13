@@ -12,7 +12,7 @@ GET /http-traffic/:trafficSourceId
 
 ## Authentication
 
-This route requires authentication. A valid Bearer token must be included in the request's `Authorization` header. The token must be obtained through the [user authentication route](/user/authuser/).
+This route requires authentication. A valid Bearer token must be included in the request's `Authorization` header. The token must be obtained through the [user authentication route](/en/user/authuser/).
 
 ```bash
 Authorization: Bearer <your-token-here>

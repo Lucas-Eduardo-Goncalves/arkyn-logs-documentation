@@ -25,7 +25,7 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/Lucas-Eduardo-Goncalves/arkyn-logs",
+          href: "https://github.com/Lucas-Eduardo-Goncalves",
         },
       ],
       sidebar: [

@@ -6,15 +6,15 @@ Esta funcionalidade é utilizada internamente pelo sistema para registrar os det
 
 ## Rota
 
-`POST /request`
+```bash
+POST /request
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
@@ -22,7 +22,7 @@ Authorization: Bearer <seu-token-aqui>
 
 Cria um novo registro de `Request` no banco de dados. Esta rota recebe os detalhes de uma requisição HTTP, como cabeçalhos, corpo e parâmetros de consulta, e os armazena para futura associação com um `HttpTraffic` ou `CoreLog`.
 
-## Corpo da Requisição (Request Body)
+## Corpo da requisição
 
 | Campo         | Tipo | Descrição                                    | Obrigatório |
 | :------------ | :--- | :------------------------------------------- | :---------- |
@@ -48,7 +48,7 @@ Cria um novo registro de `Request` no banco de dados. Esta rota recebe os detalh
 }
 ```
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `201 Created`
 
@@ -74,9 +74,13 @@ Cria um novo registro de `Request` no banco de dados. Esta rota recebe os detalh
 }
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: `headers` ou `queryParams` ausentes).
+  - **Motivo:** Ausência do token de autenticação.
+- **Código:** `401 Unauthorized`
+  - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido.
 - **Código:** `500 Internal Server Error`
   - **Motivo:** Erro inesperado no servidor.

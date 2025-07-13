@@ -6,15 +6,15 @@ Esta funcionalidade permite buscar e listar os registros de tráfego HTTP de uma
 
 ## Rota
 
-`GET /http-traffic/:trafficSourceId`
+```bash
+GET /http-traffic/:trafficSourceId
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
@@ -22,28 +22,27 @@ Authorization: Bearer <seu-token-aqui>
 
 Retorna uma lista paginada e filtrada de registros `HttpTraffic`. A rota requer autenticação, e o usuário só pode acessar dados de fontes de tráfego que lhe pertencem.
 
-## Parâmetros da Rota (Route Parameters)
+## Parâmetros da rota
 
 | Parâmetro         | Tipo   | Descrição                            | Obrigatório |
 | :---------------- | :----- | :----------------------------------- | :---------- |
 | `trafficSourceId` | string | ID da fonte de tráfego para a busca. | Sim         |
 
-## Parâmetros de Consulta (Query Parameters)
+## Parâmetros de consulta
 
 Esta rota suporta uma variedade de filtros para refinar a busca:
 
-| Parâmetro       | Tipo   | Descrição                                                   |
-| :-------------- | :----- | :---------------------------------------------------------- |
-| `page`          | number | Número da página (padrão: 1).                               |
-| `limit`         | number | Itens por página (padrão: 10).                              |
-| `startDate`     | string | Data de início no formato ISO (ex: "2025-07-10T00:00:00Z"). |
-| `endDate`       | string | Data de fim no formato ISO (ex: "2025-07-10T23:59:59Z").    |
-| `domainId`      | string | Filtra por um ID de domínio específico.                     |
-| `pathnameId`    | string | Filtra por um ID de pathname específico.                    |
-| `method`        | string | Filtra por um método HTTP (ex: "GET", "POST").              |
-| `status`        | number | Filtra por um código de status HTTP.                        |
-| `level`         | string | Filtra por nível de log ("INFO", "WARNING", "FATAL").       |
-| `trafficUserId` | string | Filtra por um ID de usuário da aplicação monitorada.        |
+| Parâmetro    | Tipo   | Descrição                                                   |
+| :----------- | :----- | :---------------------------------------------------------- |
+| `page`       | number | Número da página (padrão: 1).                               |
+| `limit`      | number | Itens por página (padrão: 10).                              |
+| `startDate`  | string | Data de início no formato ISO (ex: "2025-07-10T00:00:00Z"). |
+| `endDate`    | string | Data de fim no formato ISO (ex: "2025-07-10T23:59:59Z").    |
+| `domainId`   | string | Filtra por um ID de domínio específico.                     |
+| `pathnameId` | string | Filtra por um ID de pathname específico.                    |
+| `method`     | string | Filtra por um método HTTP (ex: "GET", "POST").              |
+| `status`     | number | Filtra por um código de status HTTP.                        |
+| `level`      | string | Filtra por nível de log ("INFO", "WARNING", "FATAL").       |
 
 ## Resposta de Sucesso (Success Response)
 
@@ -81,8 +80,12 @@ Esta rota suporta uma variedade de filtros para refinar a busca:
 
 ## Respostas de Erro (Error Responses)
 
+- **Código:** `400 Bad Request`
+  - **Motivo:** Dados de entrada inválidos (ex: trafficSourceId ausente).
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido.
 - **Código:** `403 Forbidden`
   - **Motivo:** O solicitante não tem permissão para acessar esta fonte de tráfego.
 - **Código:** `404 Not Found`

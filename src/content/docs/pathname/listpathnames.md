@@ -6,37 +6,37 @@ Esta funcionalidade permite obter uma lista de todos os caminhos de URL (`Pathna
 
 ## Rota
 
-`GET /pathname/:trafficSourceId/:domainId`
+```bash
+GET /pathname/:trafficSourceId/:domainId
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
 ## Descrição
 
-Retorna uma lista paginada dos pathnames pertencentes ao `Domain` e à `TrafficSource` indicados na URL. A rota requer autenticação, e o usuário deve ser o proprietário dos recursos.
+Retorna uma lista paginada dos pathnames pertencentes ao `Domain` e à `TrafficSource` indicados na URL. O usuário deve ser o proprietário da `TrafficSource` especificado.
 
-## Parâmetros da Rota (Route Parameters)
+## Parâmetros da rota
 
 | Parâmetro         | Tipo   | Descrição                                  | Obrigatório |
 | :---------------- | :----- | :----------------------------------------- | :---------- |
 | `trafficSourceId` | string | ID da fonte de tráfego.                    | Sim         |
 | `domainId`        | string | ID do domínio do qual listar os pathnames. | Sim         |
 
-## Parâmetros de Consulta (Query Parameters)
+## Parâmetros de consulta
 
 | Parâmetro | Tipo   | Descrição                           | Padrão |
 | :-------- | :----- | :---------------------------------- | :----- |
 | `page`    | number | Número da página a ser retornada.   | 1      |
 | `limit`   | number | Quantidade de pathnames por página. | 10     |
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `200 OK`
 
@@ -72,8 +72,12 @@ Retorna uma lista paginada dos pathnames pertencentes ao `Domain` e à `TrafficS
 
 ## Respostas de Erro (Error Responses)
 
+- **Código:** `400 Bad Request`
+  - **Motivo:** O `pathnameId` fornecido é inválido.
+  - **Motivo:** Ausência do token de autenticação.
 - **Código:** `401 Unauthorized`
   - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido
 - **Código:** `403 Forbidden`
   - **Motivo:** O solicitante não tem permissão para ver os pathnames deste domínio.
 - **Código:** `404 Not Found`

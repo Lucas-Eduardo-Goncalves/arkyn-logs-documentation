@@ -2,28 +2,29 @@
 title: Listar Registros de Tráfego HTTP
 ---
 
-Este endpoint permite a listagem de registros de tráfego HTTP (`HttpTrafficRecord`) associados a uma fonte de tráfego específica, com opções de paginação e filtros.
+Esta funcionalidade permite buscar e listar os registros de tráfego HTTP completos de uma determinada fonte de tráfego.
 
-- **Método:** `GET`
-- **URL:** `/http-traffic-record/:trafficSourceId`
+## Rota
+
+```bash
+GET /http-traffic-record/:trafficSourceId
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
-## Parâmetros da URL
+## Parâmetros da rota
 
 | Parâmetro         | Tipo     | Obrigatório | Descrição                                  |
 | ----------------- | -------- | ----------- | ------------------------------------------ |
 | `trafficSourceId` | `string` | Sim         | O ID da fonte de tráfego (Traffic Source). |
 
-## Query Params (Filtros e Paginação)
+## Parâmetros de consulta
 
 | Parâmetro   | Tipo     | Obrigatório | Descrição                                                               | Exemplo                           |
 | ----------- | -------- | ----------- | ----------------------------------------------------------------------- | --------------------------------- |
@@ -37,79 +38,56 @@ Authorization: Bearer <seu-token-aqui>
 | `startDate` | `string` | Não         | Filtra registros a partir de uma data de início (formato ISO 8601).     | `?startDate=2024-01-01T00:00:00Z` |
 | `endDate`   | `string` | Não         | Filtra registros até uma data de fim (formato ISO 8601).                | `?endDate=2024-01-31T23:59:59Z`   |
 
-## Exemplo de Requisição
-
-```bash
-curl -X GET "http://localhost:3000/http-traffic-record/d290f1ee-6c54-4b01-90e6-d701748f0851?page=1&limit=1&level=INFO"
-```
-
 ## Resposta de Sucesso
 
 **Código:** `200 OK`
 
+**Conteúdo:** Um objeto contendo a lista de `HttpTrafficRecord` e informações de paginação.
+
+**Exemplo:**
+
 ```json
 {
-  "statusCode": 200,
-  "data": {
-    "result": [
-      {
-        "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-        "status": 200,
-        "method": "GET",
-        "level": "INFO",
-        "elapsedTime": 50,
-        "createdAt": "2024-06-12T15:30:00.000Z",
-        "domain": "api.example.com",
-        "pathname": "/users",
-        "request": {
-          "headers": { "Authorization": "Bearer ..." },
-          "body": null,
-          "queryParams": { "page": "1" }
-        },
-        "response": {
-          "headers": { "Content-Type": "application/json" },
-          "body": [{ "id": 1, "name": "John Doe" }]
-        }
+  "data": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      "status": 200,
+      "method": "GET",
+      "level": "INFO",
+      "elapsedTime": 50,
+      "createdAt": "2024-06-12T15:30:00.000Z",
+      "domain": "api.example.com",
+      "pathname": "/users",
+      "request": {
+        "headers": { "Authorization": "Bearer ..." },
+        "body": null,
+        "queryParams": { "page": "1" }
+      },
+      "response": {
+        "headers": { "Content-Type": "application/json" },
+        "body": [{ "id": 1, "name": "John Doe" }]
       }
-    ],
+    }
+  ],
+  "meta": {
     "total": 1,
-    "limit": 1,
-    "page": 1
+    "page": 1,
+    "limit": 10
   }
 }
 ```
 
-## Respostas de Erro
-
-### Fonte de Tráfego não encontrada
-
-- **Código:** `404 Not Found`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 404,
-    "error": "Traffic Source not found"
-  }
-  ```
-
-### Erro de Validação
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 400,
-    "error": "Validation error: 'page' must be a number."
-  }
-  ```
-
-### Erro Interno do Servidor
-
+  - **Motivo:** Dados de entrada inválidos (ex: trafficSourceId ausente).
+  - **Motivo:** Ausência do token de autenticação.
+- **Código:** `401 Unauthorized`
+  - **Motivo:** O solicitante não está autenticado.
+  - **Motivo:** O token fornecido é inválido.
+- **Código:** `403 Forbidden`
+  - **Motivo:** O solicitante não tem permissão para acessar esta fonte de tráfego.
+- **Código:** `404 Not Found`
+  - **Motivo:** A `TrafficSource` não foi encontrada.
 - **Código:** `500 Internal Server Error`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 500,
-    "error": "Internal Server Error"
-  }
-  ```
+  - **Motivo:** Erro inesperado no servidor.

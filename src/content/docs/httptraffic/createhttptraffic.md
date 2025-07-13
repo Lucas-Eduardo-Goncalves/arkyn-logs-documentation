@@ -81,7 +81,7 @@ Cria um novo registro de `HttpTraffic`. Esta rota é tipicamente chamada por um 
 },
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos.

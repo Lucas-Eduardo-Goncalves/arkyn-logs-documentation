@@ -4,20 +4,21 @@ title: Compor Registro de Tráfego HTTP
 
 Este endpoint é responsável por receber os dados de uma transação HTTP completa (requisição, resposta e metadados de tráfego) e compor um `HttpTrafficRecord` consolidado. Este processo é geralmente acionado por um evento interno após a finalização de uma requisição monitorada.
 
-- **Método:** `POST`
-- **URL:** `/http-traffic-record/:trafficSourceId`
+## Rota
+
+```bash
+POST /http-traffic-record/:trafficSourceId
+```
 
 ## Autenticação
 
 Esta rota requer autenticação. É necessário incluir um token Bearer válido no cabeçalho `Authorization` da requisição. O token deve ser obtido através da [rota de autenticação de usuário](/user/authuser/).
 
-**Exemplo de cabeçalho:**
-
-```
+```bash
 Authorization: Bearer <seu-token-aqui>
 ```
 
-## Parâmetros da URL
+## Parâmetros da rota
 
 | Parâmetro         | Tipo     | Obrigatório | Descrição                                  |
 | ----------------- | -------- | ----------- | ------------------------------------------ |
@@ -25,32 +26,53 @@ Authorization: Bearer <seu-token-aqui>
 
 ## Corpo da Requisição
 
-O corpo da requisição deve conter três objetos principais: `request`, `response`, e `httpTraffic`.
+O corpo da requisição deve ser um objeto JSON contendo os seguintes campos:
+
+| Parâmetro         | Tipo     | Obrigatório | Descrição                                                                                 |
+| ----------------- | -------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `domainUrl`       | `string` | Sim         | A URL do domínio. Deve ser uma URL válida.                                                |
+| `pathnameUrl`     | `string` | Sim         | O caminho da URL. Deve começar com `/`.                                                   |
+| `trafficSourceId` | `string` | Sim         | O ID da fonte de tráfego (Traffic Source). Deve ser um UUID válido.                       |
+| `status`          | `number` | Sim         | O código de status HTTP da resposta. Deve ser um número inteiro.                          |
+| `protocol`        | `string` | Sim         | O protocolo utilizado. Valores permitidos: `HTTP`, `HTTPS`.                               |
+| `method`          | `string` | Sim         | O método HTTP da requisição. Valores permitidos: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`. |
+| `trafficUserId`   | `string` | Não         | O ID do usuário de tráfego associado. Se fornecido, deve ser um UUID válido.              |
+| `elapsedTime`     | `number` | Sim         | O tempo decorrido para a transação em milissegundos. Deve ser um número não negativo.     |
+| `requestHeaders`  | `object` | Sim         | Um objeto contendo os cabeçalhos da requisição.                                           |
+| `requestBody`     | `object` | Não         | Um objeto contendo o corpo da requisição. Pode ser nulo.                                  |
+| `queryParams`     | `object` | Sim         | Um objeto contendo os parâmetros de consulta da requisição.                               |
+| `responseHeaders` | `object` | Sim         | Um objeto contendo os cabeçalhos da resposta.                                             |
+| `responseBody`    | `object` | Não         | Um objeto contendo o corpo da resposta. Pode ser nulo.                                    |
+
+**Exemplo:**
 
 ```json
 {
-  "request": {
-    "id": "c290f1ee-6c54-4b01-90e6-d701748f0852",
-    "headers": { "Content-Type": "application/json" },
-    "body": { "name": "Test" },
-    "queryParams": {}
+  "domainUrl": "https://api.example.com",
+  "pathnameUrl": "/users",
+  "trafficSourceId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+  "status": 201,
+  "protocol": "HTTPS",
+  "method": "POST",
+  "trafficUserId": "f0e9d8c7-b6a5-4321-fedc-ba9876543210",
+  "elapsedTime": 150,
+  "requestHeaders": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer ..."
   },
-  "response": {
-    "id": "d290f1ee-6c54-4b01-90e6-d701748f0853",
-    "headers": { "Content-Type": "application/json" },
-    "body": { "id": "new-id", "name": "Test" }
+  "requestBody": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com"
   },
-  "httpTraffic": {
-    "id": "e290f1ee-6c54-4b01-90e6-d701748f0854",
-    "status": 201,
-    "method": "POST",
-    "level": "INFO",
-    "trafficUserId": "user-123",
-    "elapsedTime": 120,
-    "domainId": "f290f1ee-6c54-4b01-90e6-d701748f0855",
-    "pathnameId": "g290f1ee-6c54-4b01-90e6-d701748f0856",
-    "requestId": "c290f1ee-6c54-4b01-90e6-d701748f0852",
-    "responseId": "d290f1ee-6c54-4b01-90e6-d701748f0853"
+  "queryParams": {},
+  "responseHeaders": {
+    "Content-Type": "application/json"
+  },
+  "responseBody": {
+    "id": 2,
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "createdAt": "2024-06-12T16:00:00.000Z"
   }
 }
 ```
@@ -59,44 +81,56 @@ O corpo da requisição deve conter três objetos principais: `request`, `respon
 
 **Código:** `201 Created`
 
+**Conteúdo:** O objeto `HttpTrafficRecord` que foi criado.
+
+**Exemplo:**
+
 ```json
 {
-  "statusCode": 201,
-  "data": "Http traffic record composed successfully"
+  "id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+  "status": 201,
+  "method": "POST",
+  "level": "INFO",
+  "elapsedTime": 150,
+  "createdAt": "2024-06-12T16:00:00.000Z",
+  "domain": "api.example.com",
+  "pathname": "/users",
+  "request": {
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ..."
+    },
+    "body": {
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com"
+    },
+    "queryParams": {}
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "createdAt": "2024-06-12T16:00:00.000Z"
+    }
+  }
 }
 ```
 
-## Respostas de Erro
-
-### Fonte de Tráfego não encontrada
-
-- **Código:** `404 Not Found`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 404,
-    "error": "Traffic Source not found"
-  }
-  ```
-
-### Erro de Validação
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 400,
-    "error": "Validation error: 'request.id' is required."
-  }
-  ```
-
-### Erro Interno do Servidor
-
+  - **Motivo:** Dados de entrada inválidos (ex: campo obrigatório ausente, formato de URL inválido, UUID inválido).
+  - **Motivo:** Ausência do token de autenticação.
+- **Código:** `401 Unauthorized`
+  - **Motivo:** O solicitante não está autenticado ou o token fornecido é inválido.
+  - **Motivo:** O token fornecido é inválido.
+- **Código:** `403 Forbidden`
+  - **Motivo:** O solicitante não tem permissão para adicionar um domínio a esta fonte de tráfego.
+- **Código:** `404 Not Found`
+  - **Motivo:** A `TrafficSource` com o `trafficSourceId` fornecido não foi encontrada.
 - **Código:** `500 Internal Server Error`
-- **Resposta:**
-  ```json
-  {
-    "statusCode": 500,
-    "error": "Internal Server Error"
-  }
-  ```
+  - **Motivo:** Erro inesperado no servidor.

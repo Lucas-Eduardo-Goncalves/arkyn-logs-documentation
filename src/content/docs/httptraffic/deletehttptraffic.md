@@ -22,19 +22,19 @@ Authorization: Bearer <seu-token-aqui>
 
 Deleta um registro `HttpTraffic` com base no seu ID. A rota requer autenticação, e o usuário deve ter permissão sobre a `TrafficSource` à qual o registro pertence. Esta ação é geralmente reservada para fins de limpeza de dados ou administração.
 
-## Parâmetros da Rota (Route Parameters)
+## Parâmetros da rota
 
 | Parâmetro       | Tipo   | Descrição                                 | Obrigatório |
 | :-------------- | :----- | :---------------------------------------- | :---------- |
 | `httpTrafficId` | string | ID do registro de tráfego a ser deletado. | Sim         |
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `204 No Content`
 
 **Conteúdo:** Nenhum conteúdo é retornado no corpo da resposta.
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** O `httpTrafficId` fornecido é inválido.

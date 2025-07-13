@@ -44,7 +44,7 @@ Esta rota suporta uma variedade de filtros para refinar a busca:
 | `status`     | number | Filtra por um código de status HTTP.                        |
 | `level`      | string | Filtra por nível de log ("INFO", "WARNING", "FATAL").       |
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `200 OK`
 
@@ -78,7 +78,7 @@ Esta rota suporta uma variedade de filtros para refinar a busca:
 }
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: trafficSourceId ausente).

@@ -151,11 +151,8 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Introdução", slug: "user/introduction" },
-            { label: "Criar User", slug: "user/createuser" },
             { label: "Autenticar User", slug: "user/authuser" },
             { label: "Atualizar User", slug: "user/updateuser" },
-            { label: "Deletar User", slug: "user/deleteuser" },
-            { label: "Listar Users", slug: "user/listusers" },
           ],
         },
       ],

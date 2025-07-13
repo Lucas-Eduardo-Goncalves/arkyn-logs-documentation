@@ -6,13 +6,15 @@ Esta funcionalidade permite que um usuário se autentique no sistema para obter 
 
 ## Rota
 
-`POST /user/auth`
+```bash
+POST /user/auth
+```
 
 ## Descrição
 
 A autenticação é realizada fornecendo o e-mail e a senha do usuário. Se as credenciais estiverem corretas, o sistema retorna um token de acesso (JWT) que deve ser usado em requisições subsequentes para rotas protegidas.
 
-## Corpo da Requisição (Request Body)
+## Corpo da requisição
 
 | Campo      | Tipo   | Descrição          | Obrigatório |
 | :--------- | :----- | :----------------- | :---------- |
@@ -28,7 +30,7 @@ A autenticação é realizada fornecendo o e-mail e a senha do usuário. Se as c
 }
 ```
 
-## Resposta de Sucesso (Success Response)
+## Resposta de sucesso
 
 **Código:** `200 OK`
 
@@ -46,11 +48,11 @@ A autenticação é realizada fornecendo o e-mail e a senha do usuário. Se as c
 }
 ```
 
-## Respostas de Erro (Error Responses)
+## Respostas de erro
 
 - **Código:** `400 Bad Request`
   - **Motivo:** Dados de entrada inválidos (ex: e-mail ou senha não fornecidos).
-- **Código:** `401 Unauthorized`
+- **Código:** `404 Not Found`
   - **Motivo:** Credenciais inválidas (e-mail ou senha incorretos).
 - **Código:** `500 Internal Server Error`
   - **Motivo:** Erro inesperado no servidor.

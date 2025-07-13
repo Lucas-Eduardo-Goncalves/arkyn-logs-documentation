@@ -21,7 +21,7 @@ A entidade `HttpTraffic` é um dos registros de log mais completos do sistema. E
 
 ## Relacionamentos
 
-- [**TrafficSource**](/trafficsource/introduction):, [**Domain**](/domain/introduction), [**Pathname**](/pathname/introduction): Contextualizam onde a transação ocorreu.
+- [**TrafficSource**](/trafficsource/introduction), [**Domain**](/domain/introduction), [**Pathname**](/pathname/introduction): Contextualizam onde a transação ocorreu.
 - [**Request**](/request/introduction): Contém todos os detalhes da requisição de entrada.
 - [**Response**](/response/introduction): Contém todos os detalhes da resposta de saída.
 
